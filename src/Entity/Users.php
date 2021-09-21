@@ -50,6 +50,11 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $userName;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $createAt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -166,6 +171,18 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUserName(string $userName): self
     {
         $this->userName = $userName;
+
+        return $this;
+    }
+
+    public function getCreateAt(): ?\DateTimeInterface
+    {
+        return $this->createAt;
+    }
+
+    public function setCreateAt(?\DateTimeInterface $createAt): self
+    {
+        $this->createAt = $createAt;
 
         return $this;
     }
