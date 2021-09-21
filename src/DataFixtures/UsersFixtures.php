@@ -12,7 +12,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
-class usersFixtures extends Fixture
+class UsersFixtures extends Fixture
 {
     private $passwordEncoder;
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
