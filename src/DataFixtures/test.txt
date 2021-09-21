@@ -12,7 +12,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
-class usersFixtures extends Fixture
+class UsersFixtures extends Fixture 
 {
     private $passwordEncoder;
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -20,6 +20,8 @@ class usersFixtures extends Fixture
         $this->passwordEncoder = $passwordEncoder;
     }
    
+
+
     public function load(ObjectManager $manager)
     {
         
@@ -38,6 +40,7 @@ class usersFixtures extends Fixture
             $users[$i]->setFirstName($faker->firstName);
             $users[$i]->setUserName($faker->userName);
             $users[$i]->setPassword($this->passwordEncoder->encodePassword($users[$i],"wick"));
+            $users[$i]->setCreateAt($faker->dateTime($max = 'now'));
            
             $manager->persist($users[$i]);
 
