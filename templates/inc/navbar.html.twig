@@ -14,9 +14,25 @@
                </ul>
         </div>
         
-            <span class="links-primary order-1 order-lg-last text-lg-right d-block d-lg-inline ">
-                <a href="{{ path('app_login')}} " class="btn btn-login pl-0 pl-lg-1">Connectez-vous</a>
-                <a href="{{ path('app_logout')}} " class="btn btn-primary d-none d-lg-inline-block px-2">S'enregistrer</a>
+            <span class="links-primary order-1 order-lg-last text-lg-right d-block d-lg-inline">
+            {% if app.user %}
+           <!-- button déconnection -->
+<div class="btn-group">
+  <button type="button" id="dropdownMenuButton2" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sign-out-alt"></i>
+   {{ app.user.lastName }} {{ app.user.firstName }}
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+    <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profil</a></li>
+    <li><a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fas fa-power-off"></i> Déconnection</a></li>
+  </ul>
+</div>
+<!-- button déconnection-->           
+            {% else %} 
+            <a href="{{ path('app_login')}} " class="btn btn-success"><i class="fas fa-user"></i> connexion</a>
+            
+           
+            {% endif %}
+                
             </span>
     </div>
   </div>
