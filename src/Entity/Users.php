@@ -38,20 +38,24 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $lastName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $userName;
 
+    public function __construct() {
+        $this->setcreateAt(new \DateTime());
+       
+    }
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
