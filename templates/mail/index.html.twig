@@ -9,12 +9,16 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+   <h1>Hi! Please confirm your email!</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/test-symfo/test/src/Controller/MailController.php'|file_link(0) }}">src/Controller/MailController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/test-symfo/test/templates/mail/index.html.twig'|file_link(0) }}">templates/mail/index.html.twig</a></code></li>
-    </ul>
+<p>
+    Please confirm your email address by clicking the following link: <br><br>
+    <a href="{{path('app_login')}}">Confirm my Email</a>.
+    This link will expire in 15 minutes, verifier votre mail.
+</p>
+
+<p>
+    Cheers!
+</p>
 </div>
 {% endblock %}
