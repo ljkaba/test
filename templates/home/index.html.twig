@@ -4,6 +4,15 @@
 
 {% block body %}
 
+{% for flashSuccess in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ flashSuccess }}</div>
+    {% endfor %}
+
+
+
+
+
+
 <!--header -->
 
 
